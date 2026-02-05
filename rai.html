@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Além da Matéria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<link type="image/png" sizes="32x32" rel="icon" href="img/icons8-coração-32.png">  
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+
+    @keyframes stars {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: stars var(--duration) infinite;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      overflow-x: hidden;
+    }
+
+    .font-romantic {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.8)), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.95);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .card-blur {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Estilo para as bolinhas do carrossel ficarem azuis */
+    .swiper-pagination-bullet-active {
+      background: #1e40af !important;
+    }
+  </style>
+</head>
+
+<body class="text-slate-900">
+  <div id="loader"
+    class="fixed inset-0 bg-slate-900 z-[9999] flex flex-col items-center justify-center transition-opacity duration-1000">
+    <div class="relative flex items-center justify-center">
+      <div class="absolute w-16 h-16 bg-blue-500/20 rounded-full animate-ping"></div>
+      <div class="text-6xl animate-bounce">💙</div>
+    </div>
+    <h2 class="font-romantic text-3xl text-white mt-8 tracking-wide">Carregando nossa história...</h2>
+    <p class="text-blue-400 text-xs uppercase tracking-[0.3em] mt-2 opacity-50">Prepare o coração</p>
+  </div>
+  <header class="h-screen flex items-center justify-center relative bg-cover bg-center 
+               bg-[url('header2.jpg')] md:bg-[url('header1.jpg')]">
+
+    <div class="absolute inset-0 bg-blue-900/20"></div>
+
+    <div class="z-10 text-center px-6">
+      <span class="text-blue-400 font-romantic text-5xl mb-4 block">Para o meu porto seguro</span>
+      <h1 class="text-6xl md:text-9xl font-serif italic text-white leading-tight">Além da <br> <span
+          class="text-blue-400">Matéria.</span></h1>
+      <div class="mt-8 flex justify-center items-center gap-4">
+        <div class="h-[1px] w-12 bg-blue-500"></div>
+        <p class="text-white uppercase tracking-[0.4em] text-xs font-light">Nossa História em Detalhes</p>
+        <div class="h-[1px] w-12 bg-blue-500"></div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 text-sm flex flex-col items-center gap-2">
+      <div class="w-1 h-12 bg-gradient-to-b from-blue-500 to-transparent rounded-full animate-bounce"></div>
+    </div>
+  </header>
+
+  <section class="py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+      <div class="relative">
+        <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-50 rounded-full -z-10"></div>
+        <img src="https://via.placeholder.com/500x650"
+          class="rounded-2xl shadow-2xl border-[12px] border-white rotate-2" alt="Nossa primeira foto">
+      </div>
+      <div class="space-y-8">
+        <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Capítulo I</span>
+        <h2 class="text-5xl font-serif italic text-blue-950">Primeira Impressão</h2>
+        <p class="text-gray-500 leading-relaxed text-lg">
+          A noite do nascer do sol, tenho certeza que você lembra. Nós dois passando a madrugada inteira conversando sem
+          nem imaginar que iriamos ficar (eu né, vc ja tava na maldade)
+        </p>
+        <p class="text-gray-500 leading-relaxed text-lg">
+          Aquele dia eu percebi que a mudança pra Caraguá podia não ser tão ruim assim
+        </p>
+        <div class="pt-4 italic font-romantic text-3xl text-blue-800">— Onde tudo começou.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-slate-900 text-white overflow-hidden relative border-y border-blue-500/20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+      <div class="order-2 md:order-1 space-y-8">
+        <span class="text-blue-400 font-bold tracking-widest uppercase text-sm">Capítulo II</span>
+        <h2 class="text-5xl font-serif italic text-blue-100">Quando eu percebi...</h2>
+        <p class="text-slate-400 leading-relaxed text-lg italic">
+          Você pode se perguntar quando eu percebi que era com você que eu queria estar, eu não sei exatamente mas se
+          for pra falar um momento só
+        </p>
+        <p class="text-slate-400 leading-relaxed text-lg">
+          Eu falaria de logo antes de eu ir pra Disney, que você deu um jeito de sair do trabalho pra me ver nem que
+          fosse por 5 minutinhos porque eu ia ficar longe
+        </p>
+      </div>
+
+      <div class="order-1 md:order-2 grid grid-cols-2 gap-6">
+        <img src="https://via.placeholder.com/300x450" class="rounded-2xl shadow-2xl -mt-10 border-2 border-blue-500/30"
+          alt="Nós 1">
+
+        <img src="https://via.placeholder.com/300x450"
+          class="hidden md:block rounded-2xl shadow-2xl mt-10 border-2 border-blue-500/30" alt="Nós 2">
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-white">
+    <div class="text-center mb-16 px-6">
+      <h2 class="text-4xl font-serif italic text-blue-950">Nossa Galeria Particular</h2>
+      <p class="text-gray-400 mt-2">Momentos que o tempo não apaga</p>
+    </div>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl border-b-8 border-blue-900"></div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl border-b-8 border-blue-900"></div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl border-b-8 border-blue-900"></div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
+        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
+      </div>
+      <div class="swiper-pagination mt-12"></div>
+    </div>
+  </section>
+
+  <section class="py-32 bg-slate-200 border-t border-slate-300">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl font-serif italic text-blue-950">Você, do jeitinho que é</h2>
+        <div class="w-24 h-1 bg-blue-900 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <button onclick="openModal('modalManias')"
+          class="group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 text-left border border-slate-100 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -z-0 transition-all group-hover:bg-blue-900">
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:bg-white group-hover:text-blue-900 transition-colors">
+              1</div>
+            <h3 class="text-2xl font-bold text-blue-950 mb-4">Manias que amo</h3>
+            <p class="text-gray-400 text-sm leading-relaxed italic">Cada detalhe teu que me faz sorrir sem perceber...
+            </p>
+          </div>
+        </button>
+
+        <button onclick="openModal('modalPequenas')"
+          class="group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 text-left border border-slate-100 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -z-0 transition-all group-hover:bg-blue-900">
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:bg-white group-hover:text-blue-900 transition-colors">
+              2</div>
+            <h3 class="text-2xl font-bold text-blue-950 mb-4">Coisas Pequenas</h3>
+            <p class="text-gray-400 text-sm leading-relaxed italic">Aquelas atitudes que valem mais que mil palavras...
+            </p>
+          </div>
+        </button>
+
+        <button onclick="openModal('modalFuturo')"
+          class="group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 text-left border border-slate-100 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -z-0 transition-all group-hover:bg-blue-900">
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:bg-white group-hover:text-blue-900 transition-colors">
+              3</div>
+            <h3 class="text-2xl font-bold text-blue-950 mb-4">Nosso Futuro</h3>
+            <p class="text-gray-400 text-sm leading-relaxed italic">Onde os nossos sonhos se encontram e se tornam um...
+            </p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div id="modalManias" class="modal" onclick="closeModal(event)">
+    <div class="bg-white p-10 md:p-20 rounded-[4rem] max-w-2xl w-full shadow-2xl relative overflow-y-auto max-h-[85vh]">
+      <h3 class="text-4xl font-serif italic text-blue-900 mb-6">Manias que eu amo</h3>
+      <div class="h-[2px] w-24 bg-blue-100 mb-10"></div>
+      <p class="text-gray-600 leading-loose text-lg whitespace-pre-line">
+        Tem manias que são só suas <br>
+      <ul>
+        <li>• Sua alegria cozinhando pra gente</li>
+        <li>• O jeito que vc me olha quando te elogio</li>
+        <li>• A preguiça ABSURDA de fazer a barba (que vc nem gosta de ter)</li>
+        <li>• Os sustos q vc me dá quando vai gritar c as cachorrinhas</li>
+        <li>• Vc e sua mania de não usar pijama KAKKSKAKAKSKKAKS</li>
+      </ul> <br>
+      Todas essas manias que tornam você ser você, eu amo cada uma
+      </p>
+      <button
+        class="mt-12 px-8 py-3 bg-blue-900 text-white rounded-full font-bold uppercase text-xs tracking-widest hover:bg-blue-800 transition shadow-lg shadow-blue-900/20">Fechar</button>
+    </div>
+  </div>
+
+  <div id="modalPequenas" class="modal" onclick="closeModal(event)">
+    <div class="bg-white p-10 md:p-20 rounded-[4rem] max-w-2xl w-full shadow-2xl relative overflow-y-auto max-h-[85vh]">
+      <h3 class="text-4xl font-serif italic text-blue-900 mb-6">Coisas Pequenas</h3>
+      <div class="h-[2px] w-24 bg-blue-100 mb-10"></div>
+      <p class="text-gray-600 leading-loose text-lg whitespace-pre-line">
+        Eu ja falei das suas manias, agr é a vez das nossas <br>
+        <li>Eu te amo muitão assim olha</li>
+        <li>Os abraços de urso</li>
+        <li>Me puxar do nada pro sofá/cama pra ficaar agarradinho</li>
+        <li>A língua/sopro no meio do selinho</li>
+        <li>Nenhum querendo escolher nada, oq assistir, onde ir, oq comer</li> <br>
+        Eu amo a gnt, somos um casal mto divo
+      </p>
+      <button
+        class="mt-12 px-8 py-3 bg-blue-900 text-white rounded-full font-bold uppercase text-xs tracking-widest hover:bg-blue-800 transition">Fechar</button>
+    </div>
+  </div>
+
+  <div id="modalFuturo" class="modal" onclick="closeModal(event)">
+    <div class="bg-white p-10 md:p-20 rounded-[4rem] max-w-2xl w-full shadow-2xl relative overflow-y-auto max-h-[85vh]">
+      <h3 class="text-4xl font-serif italic text-blue-900 mb-6">Nosso Futuro</h3>
+      <div class="h-[2px] w-24 bg-blue-100 mb-10"></div>
+      <p class="text-gray-600 leading-loose text-lg whitespace-pre-line">
+        Cada dia eu penso no nosso futuro, vc sabe bem oq eu sonho <br>
+        Uma casa com piscina <br> Uma filha linda <br> Churrasquinho <br> Paz <br>
+        É com vc que eu quero realizar tudo isso e muito mais
+      </p>
+      <button
+        class="mt-12 px-8 py-3 bg-blue-900 text-white rounded-full font-bold uppercase text-xs tracking-widest hover:bg-blue-800 transition">Fechar</button>
+    </div>
+  </div>
+
+  <section class="py-20 bg-blue-950 text-white text-center">
+    <h3 class="font-serif italic text-3xl mb-10">Contando cada segundo ao seu lado...</h3>
+    <div class="flex justify-center gap-4 md:gap-10 text-center">
+      <div>
+        <span id="days" class="text-4xl md:text-6xl font-bold block">00</span>
+        <span class="text-blue-400 uppercase text-xs tracking-widest">Dias</span>
+      </div>
+      <div>
+        <span id="hours" class="text-4xl md:text-6xl font-bold block">00</span>
+        <span class="text-blue-400 uppercase text-xs tracking-widest">Horas</span>
+      </div>
+      <div>
+        <span id="minutes" class="text-4xl md:text-6xl font-bold block">00</span>
+        <span class="text-blue-400 uppercase text-xs tracking-widest">Minutos</span>
+      </div>
+      <div>
+        <span id="seconds" class="text-4xl md:text-6xl font-bold block">00</span>
+        <span class="text-blue-400 uppercase text-xs tracking-widest">Segundos</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-slate-200 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <h2 class="text-3xl font-serif italic text-blue-950 mb-8">Por que eu te amo?</h2>
+      <div id="motivo-container"
+        class="min-h-[100px] flex items-center justify-center p-8 bg-blue-50 rounded-3xl border-2 border-dashed border-blue-200 mb-8 transition-all duration-500">
+        <p id="texto-motivo" class="text-3xl text-blue-800 font-serif italic">Clique no botão para descobrir um
+          motivo...</p>
+      </div>
+      <button onclick="gerarMotivo()"
+        class="bg-blue-900 text-white px-10 py-4 rounded-full font-bold uppercase text-xs tracking-[0.2em] hover:bg-blue-800 transition shadow-lg active:scale-95">
+        Descobrir mais um motivo 💙
+      </button>
+    </div>
+  </section>
+
+  <footer class="py-40 bg-white text-center border-t border-slate-100">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-5xl md:text-8xl font-serif italic text-blue-950 mb-10 leading-tight">Eu te amo <br> além da
+        matéria.</h2>
+      <div class="flex justify-center items-center gap-6">
+        <div class="h-[1px] w-16 bg-blue-200"></div>
+        <p class="font-romantic text-4xl text-blue-600">Feliz 1 ano pra gente meu amor!</p>
+        <div class="h-[1px] w-16 bg-blue-200"></div>
+      </div>
+      <p class="mt-12 text-slate-800 uppercase tracking-[0.5em] text-[20px]">Eternamente 18.02.2025</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="rai.js"></script>
+</body>
+
+</html>
