@@ -7,14 +7,13 @@
   <title>Além da Matéria</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-<link type="image/png" sizes="32x32" rel="icon" href="/img/icons8-coração-32.png">  
+  <link type="image/png" sizes="32x32" rel="icon" href="/img/icons8-coração-32.png">
 
-<link
+  <link
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Plus+Jakarta+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
-
     @keyframes stars {
 
       0%,
@@ -83,6 +82,16 @@
     .swiper-pagination-bullet-active {
       background: #1e40af !important;
     }
+
+    /* Estilo para a foto 'saltar' */
+    .img-expand {
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .img-expand:hover {
+      transform: scale(1.02);
+    }
   </style>
 </head>
 
@@ -96,18 +105,39 @@
     <h2 class="font-romantic text-3xl text-white mt-8 tracking-wide">Carregando nossa história...</h2>
     <p class="text-blue-400 text-xs uppercase tracking-[0.3em] mt-2 opacity-50">Prepare o coração</p>
   </div>
-  <header class="h-screen flex items-center justify-center relative bg-cover bg-center 
-               bg-[url('header2.jpg')] md:bg-[url('header1.jpg')]">
 
-    <div class="absolute inset-0 bg-blue-900/20"></div>
+
+
+  <div class="fixed top-0 left-0 w-full h-1.5 bg-blue-100 z-[1000]">
+    <div id="progress-bar" class="h-full bg-blue-600 w-0 transition-all duration-150 relative">
+      <div class="absolute right-[-10px] top-[-10px] text-lg">💙</div>
+    </div>
+  </div>
+
+
+
+
+  <header class="h-screen flex items-center justify-center relative bg-cover bg-center 
+               bg-[url('img/header2.jpeg')] md:bg-[url('img/header1.jpeg')] 
+               brightness-[0.75]">
+
+    <div class="absolute inset-0 bg-black/40"></div>
 
     <div class="z-10 text-center px-6">
-      <span class="text-blue-400 font-romantic text-5xl mb-4 block">Para o meu porto seguro</span>
-      <h1 class="text-6xl md:text-9xl font-serif italic text-white leading-tight">Além da <br> <span
-          class="text-blue-400">Matéria.</span></h1>
+      <span class="text-blue-400 font-romantic text-4xl md:text-5xl mb-4 block">
+        Para o meu porto seguro
+      </span>
+
+      <h1 class="text-6xl md:text-9xl font-serif italic text-white leading-tight">
+        Além da <br>
+        <span class="text-blue-400">Matéria.</span>
+      </h1>
+
       <div class="mt-8 flex justify-center items-center gap-4">
         <div class="h-[1px] w-12 bg-blue-500"></div>
-        <p class="text-white uppercase tracking-[0.4em] text-xs font-light">Nossa História em Detalhes</p>
+        <p class="text-white uppercase tracking-[0.4em] text-[10px] md:text-xs font-light">
+          Nossa História em Detalhes
+        </p>
         <div class="h-[1px] w-12 bg-blue-500"></div>
       </div>
     </div>
@@ -117,30 +147,39 @@
     </div>
   </header>
 
-  <section class="py-32 bg-white">
+  <section class="py-32 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
-      <div class="relative">
-        <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-50 rounded-full -z-10"></div>
-        <img src="https://via.placeholder.com/500x650"
-          class="rounded-2xl shadow-2xl border-[12px] border-white rotate-2" alt="Nossa primeira foto">
+
+      <div class="relative mx-auto md:mx-0 max-w-sm">
+        <div class="absolute -top-10 -left-10 w-32 h-32 bg-blue-50 rounded-full -z-10"></div>
+
+        <img src="img/primeira.jpeg"
+          class="rounded-2xl shadow-2xl brightness-75 border-[12px] border-white rotate-2 w-full h-auto"
+          alt="Nossa primeira foto">
       </div>
+
       <div class="space-y-8">
         <span class="text-blue-600 font-bold tracking-widest uppercase text-sm">Capítulo I</span>
         <h2 class="text-5xl font-serif italic text-blue-950">Primeira Impressão</h2>
-        <p class="text-gray-500 leading-relaxed text-lg">
-          A noite do nascer do sol, tenho certeza que você lembra. Nós dois passando a madrugada inteira conversando sem
-          nem imaginar que iriamos ficar (eu né, vc ja tava na maldade)
-        </p>
-        <p class="text-gray-500 leading-relaxed text-lg">
-          Aquele dia eu percebi que a mudança pra Caraguá podia não ser tão ruim assim
-        </p>
+        <div class="space-y-4">
+          <p class="text-gray-500 leading-relaxed text-lg">
+            A noite do nascer do sol, tenho certeza que você lembra. Nós dois passando a madrugada inteira conversando
+            sem
+            nem imaginar que iriamos ficar (eu né, vc ja tava na maldade)
+          </p>
+          <p class="text-gray-500 leading-relaxed text-lg">
+            Aquele dia eu percebi que a mudança pra Caraguá podia não ser tão ruim assim
+          </p>
+        </div>
         <div class="pt-4 italic font-romantic text-3xl text-blue-800">— Onde tudo começou.</div>
       </div>
+
     </div>
   </section>
 
   <section class="py-32 bg-slate-900 text-white overflow-hidden relative border-y border-blue-500/20">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+
       <div class="order-2 md:order-1 space-y-8">
         <span class="text-blue-400 font-bold tracking-widest uppercase text-sm">Capítulo II</span>
         <h2 class="text-5xl font-serif italic text-blue-100">Quando eu percebi...</h2>
@@ -154,13 +193,14 @@
         </p>
       </div>
 
-      <div class="order-1 md:order-2 grid grid-cols-2 gap-6">
-        <img src="https://via.placeholder.com/300x450" class="rounded-2xl shadow-2xl -mt-10 border-2 border-blue-500/30"
-          alt="Nós 1">
+      <div class="order-1 md:order-2 relative">
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
 
-        <img src="https://via.placeholder.com/300x450"
-          class="hidden md:block rounded-2xl shadow-2xl mt-10 border-2 border-blue-500/30" alt="Nós 2">
+        <img src="img/disney.jpeg"
+          class="w-full h-auto aspect-video object-cover rounded-2xl shadow-2xl border-2 border-blue-500/30 -rotate-2"
+          alt="Momento especial">
       </div>
+
     </div>
   </section>
 
@@ -172,28 +212,96 @@
 
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+        <div class="swiper-slide px-4"><img src="img/carrossel1.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
         </div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl border-b-8 border-blue-900"></div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+        <div class="swiper-slide px-4"><img src="img/carrossel2.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
         </div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl border-b-8 border-blue-900"></div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl border-b-8 border-blue-900"></div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
-        <div class="swiper-slide px-4"><img src="https://via.placeholder.com/500x700"
-            class="rounded-3xl h-[550px] w-full object-cover shadow-xl"></div>
+        <div class="swiper-slide px-4"><img src="img/carrossel3.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel4.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel5.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel6.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel7.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel8.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel9.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel10.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel11.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel12.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel13.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel14.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel15.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel16.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel17.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel18.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel19.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel20.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel21.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel22.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel23.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel24.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel25.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel26.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel27.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel28.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+        <div class="swiper-slide px-4"><img src="img/carrossel29.jpeg"
+            class="rounded-3xl h-[550px] w-full object-cover shadow-xl transition-all duration-700">
+        </div>
+
+
+
       </div>
       <div class="swiper-pagination mt-12"></div>
     </div>
@@ -344,7 +452,82 @@
     </div>
   </section>
 
-  <footer class="py-40 bg-white text-center border-t border-slate-100">
+
+
+
+
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+
+      <div class="text-center mb-16">
+        <h2 class="text-2xl font-black tracking-tighter uppercase italic text-slate-900 leading-none">
+          Relatório de Performance <br>
+          <span class="text-blue-600 text-[10px] font-bold tracking-[0.3em] not-italic">Temporada 2024/2025</span>
+        </h2>
+      </div>
+
+      <div class="space-y-12">
+
+        <div class="group">
+          <div class="flex justify-between items-end mb-2">
+            <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-widest">Habilidade na Cozinha</h3>
+          </div>
+          <div class="w-full h-8 bg-slate-100 rounded-lg overflow-hidden flex">
+            <div class="bg-blue-900 h-full flex items-center px-3 text-white text-[9px] font-black uppercase"
+              style="width: 90%">
+              Você (Chef Vitalício)
+            </div>
+            <div class="bg-slate-300 h-full flex items-center px-3 text-slate-600 text-[9px] font-black uppercase"
+              style="width: 10%">
+              Eu
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="flex justify-between items-end mb-2">
+            <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-widest">Decisão do Jantar</h3>
+          </div>
+          <div class="w-full h-8 bg-slate-100 rounded-lg overflow-hidden flex">
+            <div class="bg-slate-400 h-full flex items-center px-3 text-white text-[9px] font-black uppercase"
+              style="width: 50%">
+              "Você que sabe"
+            </div>
+            <div
+              class="bg-blue-600 h-full flex items-center px-3 text-white text-[9px] font-black uppercase border-l border-white/20"
+              style="width: 50%">
+              "Tanto faz"
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="flex justify-between items-end mb-2">
+            <h3 class="text-[11px] font-black text-slate-800 uppercase tracking-widest">Resistência a Cócegas</h3>
+          </div>
+          <div class="w-full h-8 bg-slate-100 rounded-lg overflow-hidden flex">
+            <div class="bg-blue-800 h-full flex items-center px-3 text-white text-[9px] font-black uppercase"
+              style="width: 85%">
+              Sua Blindagem
+            </div>
+            <div class="bg-red-500 h-full flex items-center px-3 text-white text-[9px] font-black uppercase"
+              style="width: 15%">
+              Eu
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em] italic">
+          *Dados coletados via observação diária em Caraguá.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="py-40 bg-slate-200 text-center border-t border-slate-100">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-5xl md:text-8xl font-serif italic text-blue-950 mb-10 leading-tight">Eu te amo <br> além da
         matéria.</h2>
@@ -355,6 +538,22 @@
       </div>
       <p class="mt-12 text-slate-800 uppercase tracking-[0.5em] text-[20px]">Eternamente 18.02.2025</p>
     </div>
+
+    <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-8 left-1/2 -translate-x-1/2 md:left-auto md:right-8 md:translate-x-0 z-[50] 
+         opacity-0 translate-y-10 scale-0 
+         bg-blue-900 text-white w-14 h-14 rounded-full shadow-2xl 
+         flex flex-col items-center justify-center transition-all duration-500 
+         hover:bg-blue-800 active:scale-90 group">
+
+      <span class="text-xs font-bold mb-[-2px] group-hover:-translate-y-1 transition-transform">↑</span>
+      <span class="text-lg">💙</span>
+
+      <span class="hidden md:block absolute -top-10 right-0 bg-blue-900 text-[10px] px-3 py-1 rounded-full 
+               whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+        Ler de novo?
+      </span>
+    </button>
+
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

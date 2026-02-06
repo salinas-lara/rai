@@ -32,6 +32,36 @@ window.addEventListener('load', () => {
 });
 
 const motivos = [
+    "Porque você lembra de coisas que eu achei que ninguém notaria.",
+    "Pelo jeito que você me espera sem reclamar.",
+    "Porque você me deixa errar sem me diminuir.",
+    "Pela forma como você cuida do tempo que passamos juntos.",
+    "Porque você respeita meus silêncios sem tentar preenchê-los.",
+    "Pelo jeito que você me olha quando acha que eu não estou vendo.",
+    "Porque você se esforça para aprender o que é importante pra mim.",
+    "Pela atenção que você dá às minhas histórias repetidas.",
+    "Porque você me trata com gentileza mesmo nos dias difíceis.",
+    "Pelo cuidado que você tem com as palavras quando fala comigo.",
+    "Porque você faz questão de me incluir nas decisões.",
+    "Pela forma como você reage quando eu estou vulnerável.",
+    "Porque você não tenta me mudar.",
+    "Pelo jeito que você segura as minhas inseguranças.",
+    "Porque você se importa com quem eu sou quando ninguém está olhando.",
+    "Pela maneira como você me incentiva sem pressionar.",
+    "Porque você me dá espaço sem se afastar.",
+    "Pelo respeito com que você lida com minhas fragilidades.",
+    "Porque você se preocupa com o meu futuro junto do seu.",
+    "Pela forma como você valoriza o que sentimos.",
+    "Porque você cuida da nossa relação com maturidade.",
+    "Pelo jeito que você me escolhe até nos dias comuns.",
+    "Porque você se responsabiliza pelo que sente.",
+    "Pela forma como você me protege emocionalmente.",
+    "Porque você constrói, não apenas promete.",
+    "Pelo jeito que você permanece.",
+    "Porque você não transforma amor em peso.",
+    "Pela segurança emocional que você cria.",
+    "Porque você faz o amor crescer, não sufocar.",
+    "Pelo compromisso silencioso que você tem comigo.",
     "Pelo jeito que você me olha quando está com sono.",
     "Porque você me apoia até nas minhas ideias mais loucas.",
     "Pela sua dedicação em tudo o que faz.",
@@ -146,3 +176,46 @@ function updateCounter() {
     document.getElementById("seconds").innerText = s;
 }
 setInterval(updateCounter, 1000);
+window.onscroll = function () {
+    updateProgressBar();
+};
+
+function updateProgressBar() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+
+    // Atualiza a largura da barra azul
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+}
+
+
+
+
+
+
+
+
+
+// Monitora o scroll para mostrar/esconder o botão
+window.addEventListener('scroll', function () {
+    const btn = document.getElementById('backToTop');
+
+    if (window.scrollY > 400) {
+        // Mostra o botão com animação
+        btn.classList.remove('opacity-0', 'translate-y-10', 'scale-0');
+        btn.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+    } else {
+        // Esconde o botão
+        btn.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
+        btn.classList.add('opacity-0', 'translate-y-10', 'scale-0');
+    }
+});
+
+// Função para subir suavemente
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
